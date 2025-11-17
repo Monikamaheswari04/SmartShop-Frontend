@@ -1,5 +1,3 @@
-
-
 import { useMemo, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { motion as Motion } from "framer-motion";
@@ -45,7 +43,6 @@ export default function Home() {
   // Total pages
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
 
-  // Compute effective page without setState in effect
   const effectivePage =
     category !== "All" || sortBy !== "featured" || searchTerm
       ? 1
@@ -57,14 +54,14 @@ export default function Home() {
   }, [filtered, effectivePage]);
 
   return (
-    <div>
+    <div className="px-3 sm:px-6 md:px-8 lg:px-12">
       {/* Filter Bar */}
-      <section className="mb-4 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-        <div className="flex items-center gap-3">
+      <section className="mb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-3 w-full sm:w-auto">
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-            className="px-3 py-2 border rounded dark:bg-gray-700 dark:border-gray-600"
+            className="px-3 py-2 border rounded w-full sm:w-auto dark:bg-gray-700 dark:border-gray-600"
           >
             {categories.map((c) => (
               <option key={c}>{c}</option>
@@ -74,7 +71,7 @@ export default function Home() {
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
-            className="px-3 py-2 border rounded dark:bg-gray-700 dark:border-gray-600"
+            className="px-3 py-2 border rounded w-full sm:w-auto dark:bg-gray-700 dark:border-gray-600"
           >
             <option value="featured">Featured</option>
             <option value="price-asc">Price: Low → High</option>
@@ -83,14 +80,17 @@ export default function Home() {
           </select>
         </div>
 
-        <div className="text-sm text-gray-500 dark:text-gray-400">
+        <div className="text-sm text-gray-500 dark:text-gray-400 mt-2 sm:mt-0 text-center sm:text-left">
           Showing <strong>{filtered.length}</strong> results
         </div>
       </section>
 
       {/* Product Grid */}
       <section>
-        <Motion.div layout className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <Motion.div
+          layout
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+        >
           {paged.map((p) => (
             <Motion.div
               key={p.id}
@@ -106,21 +106,21 @@ export default function Home() {
       </section>
 
       {/* Pagination */}
-      <section className="mt-6 flex items-center justify-center gap-3">
+      <section className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
         <button
-          className="px-3 py-1 border rounded"
+          className="px-3 py-1 border rounded w-full sm:w-auto"
           onClick={() => setPage((p) => Math.max(1, p - 1))}
           disabled={effectivePage === 1}
         >
           Prev
         </button>
 
-        <div className="text-gray-700 dark:text-gray-300">
+        <div className="text-gray-700 dark:text-gray-300 my-1 sm:my-0">
           Page {effectivePage} / {totalPages}
         </div>
 
         <button
-          className="px-3 py-1 border rounded"
+          className="px-3 py-1 border rounded w-full sm:w-auto"
           onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
           disabled={effectivePage === totalPages}
         >
