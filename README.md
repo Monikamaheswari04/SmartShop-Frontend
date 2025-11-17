@@ -56,17 +56,6 @@ npm start
 
 ---
 
-## 📸 Screenshots
-
-### Desktop View
-
-![Desktop View](screenshots/desktop-view.png)
-
-### Mobile View
-
-![Mobile View](screenshots/mobile-view.png)
-
----
 
 ## 🎯 Assumptions & Notes
 
