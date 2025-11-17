@@ -1,5 +1,3 @@
-
-
 import { useWishlist } from "../hooks/useWishlist";
 import { useCart } from "../hooks/useCart";
 import { useAuth } from "../hooks/useAuth";
@@ -23,10 +21,10 @@ export default function Wishlist() {
   if (wishlist.length === 0) {
     return (
       <div className="max-w-7xl mx-auto p-4 text-center text-gray-700 dark:text-gray-300">
-        <h2 className="text-2xl font-semibold mb-2">Your Wishlist is Empty</h2>
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-2">Your Wishlist is Empty</h2>
         <Link
           to="/"
-          className="inline-block mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+          className="inline-block mt-2 px-4 py-2 sm:px-6 sm:py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
         >
           Continue Shopping
         </Link>
@@ -35,37 +33,37 @@ export default function Wishlist() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div className="max-w-7xl mx-auto p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
       {wishlist.map((product) => (
         <div
           key={product.id}
-          className="flex flex-col bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md transition hover:scale-105"
+          className="flex flex-col bg-white dark:bg-gray-800 p-3 sm:p-4 rounded-lg shadow-md transition hover:scale-105"
         >
           <Link to={`/product/${product.id}`}>
             <img
               src={product.image}
               alt={product.name}
-              className="h-48 w-full object-cover rounded mb-3"
+              className="h-40 sm:h-48 w-full object-cover rounded mb-2 sm:mb-3"
             />
           </Link>
           <div className="flex-1">
-            <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">
+            <h3 className="font-semibold text-gray-900 dark:text-gray-100 text-sm sm:text-base mb-1">
               {product.name}
             </h3>
-            <p className="text-gray-500 dark:text-gray-400 mb-2">
+            <p className="text-gray-500 dark:text-gray-400 text-sm sm:text-base mb-2">
               ₹{product.price.toFixed(2)}
             </p>
           </div>
-          <div className="flex gap-2">
+          <div className="flex flex-col sm:flex-row gap-2">
             <button
               onClick={() => handleAddToCart(product)}
-              className="flex-1 px-3 py-2 rounded bg-blue-600 text-white hover:bg-blue-700 transition"
+              className="flex-1 px-3 py-2 sm:px-4 sm:py-2 rounded bg-blue-600 text-white hover:bg-blue-700 transition"
             >
               Add to Cart
             </button>
             <button
               onClick={() => handleRemoveWishlist(product)}
-              className="flex-1 px-3 py-2 rounded bg-red-500 text-white hover:bg-red-600 transition"
+              className="flex-1 px-3 py-2 sm:px-4 sm:py-2 rounded bg-red-500 text-white hover:bg-red-600 transition"
             >
               Remove
             </button>
