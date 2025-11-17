@@ -1,0 +1,14 @@
+[
+  { "id":1, "name":"Aurora Wireless Headphones","price":129.99,"rating":4.6,"category":"Electronics","image":"https://picsum.photos/seed/p1/600/400","description":"Comfortable over-ear wireless headphones." },
+  { "id":2, "name":"Lumen Desk Lamp","price":39.99,"rating":4.2,"category":"Home","image":"https://picsum.photos/seed/p2/600/400","description":"Adjustable LED desk lamp." },
+  { "id":3, "name":"Terra Ceramic Plant Pot","price":24.5,"rating":4.4,"category":"Home","image":"https://picsum.photos/seed/p3/600/400","description":"Minimal ceramic pot." },
+  { "id":4, "name":"Momentum Running Shoes","price":79.0,"rating":4.1,"category":"Fashion","image":"https://picsum.photos/seed/p4/600/400","description":"Lightweight running shoes." },
+  { "id":5, "name":"Canvas Backpack","price":49.99,"rating":4.3,"category":"Fashion","image":"https://picsum.photos/seed/p5/600/400","description":"Durable backpack with laptop sleeve." },
+  { "id":6, "name":"Nebula Smartphone Stand","price":15.99,"rating":4.0,"category":"Electronics","image":"https://picsum.photos/seed/p6/600/400","description":"Adjustable smartphone stand." },
+  { "id":7, "name":"Aurora Smartwatch","price":199.99,"rating":4.7,"category":"Electronics","image":"https://picsum.photos/seed/p7/600/400","description":"Smartwatch with fitness tracking." },
+  { "id":8, "name":"Cosmo Wall Art","price":59.99,"rating":4.5,"category":"Home","image":"https://picsum.photos/seed/p8/600/400","description":"Modern abstract wall art." },
+  { "id":9, "name":"Zen Yoga Mat","price":29.99,"rating":4.3,"category":"Fitness","image":"https://picsum.photos/seed/p9/600/400","description":"Eco-friendly non-slip yoga mat." },
+  { "id":10, "name":"Luxe Sunglasses","price":89.99,"rating":4.6,"category":"Fashion","image":"https://picsum.photos/seed/p10/600/400","description":"Polarized stylish sunglasses." },
+  { "id":11, "name":"Aurora Gaming Mouse","price":59.99,"rating":4.8,"category":"Electronics","image":"https://picsum.photos/seed/p11/600/400","description":"RGB gaming mouse with high precision." },
+  { "id":12, "name":"Eclipse Desk Organizer","price":19.99,"rating":4.2,"category":"Home","image":"https://picsum.photos/seed/p12/600/400","description":"Keep your desk tidy." }
+]
