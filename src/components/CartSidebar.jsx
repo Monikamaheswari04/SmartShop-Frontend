@@ -1,21 +1,18 @@
-
-
 import { AnimatePresence, motion as Motion } from "framer-motion";
 import { useCart } from "../context/useCart";
-import { useNavigate } from "react-router-dom"; // <-- import useNavigate
+import { useNavigate } from "react-router-dom";
 
 export default function CartSidebar() {
   const { cartOpen, toggleCart, cartItems, updateQty, removeFromCart, clearCart } = useCart();
   const total = cartItems.reduce((s, i) => s + i.price * i.quantity, 0);
-  const navigate = useNavigate(); // <-- initialize navigate
+  const navigate = useNavigate();
 
   const handleCheckout = () => {
     if (cartItems.length === 0) {
       alert("Your cart is empty!");
       return;
     }
-    // You can add additional logic here, like sending cart to backend
-    navigate("/checkout"); // <-- navigate to checkout page
+    navigate("/checkout");
   };
 
   return (
@@ -25,9 +22,9 @@ export default function CartSidebar() {
           initial={{ x: 300 }}
           animate={{ x: 0 }}
           exit={{ x: 300 }}
-          className="fixed top-0 right-0 h-full w-96 bg-white dark:bg-gray-900 shadow-lg z-50 p-4 transition-colors duration-300"
+          className="fixed top-0 right-0 h-full w-full sm:w-96 bg-white dark:bg-gray-900 shadow-lg z-50 p-4 transition-colors duration-300"
         >
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-2 sm:gap-0">
             <h3 className="text-lg font-bold">Your Cart</h3>
             <div className="flex items-center gap-2">
               <button onClick={clearCart} className="px-3 py-1 border rounded text-sm">
@@ -43,11 +40,11 @@ export default function CartSidebar() {
             {cartItems.length === 0 && <div className="text-gray-500">Cart is empty</div>}
 
             {cartItems.map(item => (
-              <div key={item.id} className="flex gap-3 items-center">
+              <div key={item.id} className="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="w-16 h-16 object-cover rounded"
+                  className="w-24 h-24 sm:w-16 sm:h-16 object-cover rounded"
                 />
 
                 <div className="flex-1">
@@ -71,7 +68,7 @@ export default function CartSidebar() {
                   </div>
                 </div>
 
-                <button onClick={() => removeFromCart(item.id)} className="text-red-500">
+                <button onClick={() => removeFromCart(item.id)} className="text-red-500 mt-2 sm:mt-0">
                   Remove
                 </button>
               </div>
@@ -85,7 +82,6 @@ export default function CartSidebar() {
             </div>
 
             <div className="mt-3">
-              {/* Updated Checkout button */}
               <button
                 onClick={handleCheckout}
                 className="w-full px-4 py-2 rounded bg-blue-600 text-white"
