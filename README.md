@@ -1,8 +1,4 @@
-# ProU Store - Frontend Development Assessment
 
-Greetings! This project is a submission for the **Track 1 – Frontend Development** assessment by **ProU Technology**.
-
----
 
 ## ✅ Project Overview
 
