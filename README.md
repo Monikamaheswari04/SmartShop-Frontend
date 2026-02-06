@@ -32,7 +32,7 @@ Features implemented:
 1. Clone the repository:
 
 ```bash
-git clone <D:\frontend-storefront>
+git clone <https://github.com/Monikamaheswari04/SmartShop-Frontend>
 cd <frontend-storefront>
 ```
 
