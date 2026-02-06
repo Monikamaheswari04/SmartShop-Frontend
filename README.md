@@ -32,8 +32,8 @@ Features implemented:
 1. Clone the repository:
 
 ```bash
-git clone <YOUR_REPOSITORY_URL>
-cd <YOUR_PROJECT_FOLDER>
+git clone <D:\frontend-storefront>
+cd <frontend-storefront>
 ```
 
 2. Install dependencies:
